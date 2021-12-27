@@ -1,0 +1,5 @@
+com\docker\testCases\GoogleSearchTest.class
+com\docker\pageObjects\GoogleResultPage.class
+com\docker\pageObjects\BaseClass.class
+com\docker\pageObjects\GoogleHomePage.class
+com\docker\testCases\GoogleHomeTest.class
