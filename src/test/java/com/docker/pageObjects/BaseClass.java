@@ -3,13 +3,18 @@ package com.docker.pageObjects;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 
@@ -19,18 +24,19 @@ public class BaseClass {
 	@BeforeTest
 	public void setUp(String BROWSER) throws MalformedURLException {
 
-/*      String host = "localhost";
-	 String HUB_HOST = "selenium-hub";
-      
-   //   String HUB_HOST = null;
-*/		
-	    String host = "selenium-hub";
-	  
-/*	  if(HUB_HOST  != null)
-	  {
-		   host=HUB_HOST;
-		   System.out.println("Remote host :"+host);
-	  }*/
+		/*
+		 * String host = "localhost"; String HUB_HOST = "selenium-hub";
+		 * 
+		 * // String HUB_HOST = null;
+		 */
+		String host = "selenium-hub";
+		
+	//	String browserName=BROWSER;
+
+		/*
+		 * if(HUB_HOST != null) { host=HUB_HOST;
+		 * System.out.println("Remote host :"+host); }
+		 */
 
 		DesiredCapabilities dc = new DesiredCapabilities();
 
@@ -43,18 +49,16 @@ public class BaseClass {
 			dc.setBrowserName(BrowserType.FIREFOX);
 
 		}
-		
-		
-		
-		String completeURL = "http://"+host+":4444/wd/hub";
 
-		/*
-		 * if (browserName.equals("chrome")) {
-		 * WebDriverManager.chromedriver().setup(); driver = new ChromeDriver();
-		 * } else if (browserName.equals("firefox")) {
-		 * WebDriverManager.firefoxdriver().setup(); driver = new
-		 * FirefoxDriver(); }
-		 */
+		String completeURL = "http://" + host + ":4444/wd/hub";
+
+		/*if (browserName.equals("chrome")) {
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+		} else if (browserName.equals("firefox")) {
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+		}*/
 
 		driver = new RemoteWebDriver(new URL(completeURL), dc);
 		driver.get("https://www.google.com/");
