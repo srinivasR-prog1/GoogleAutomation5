@@ -10,4 +10,5 @@ COPY pom.xml pom.xml
 #Add healthcheck.sh healthcheck.sh
 RUN wget https://s3.amazonaws.com/selenium-docker/healthcheck/healthcheck.sh
 #ENTRYPOINT sh healthcheck.sh
-ENTRYPOINT ["sh", "/healthcheck.sh"]
+#ENTRYPOINT ["sh", "/healthcheck.sh"]
+ENTRYPOINT ["/bin/sh", "-c", "sh healthcheck.sh"]
