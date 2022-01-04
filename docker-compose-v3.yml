@@ -42,4 +42,4 @@ services:
       - BROWSER=chrome       
       - MODULE=testng.xml
     volumes:
-      - ./output:/Users/tsrin/workspace/GoogleAutomation5/test-output  
+      - /Users/tsrin/OutputResult:/output  
