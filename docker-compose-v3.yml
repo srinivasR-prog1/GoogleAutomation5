@@ -26,4 +26,4 @@ services:
       - BROWSER=chrome       
       - MODULE=pom.xml
     volumes:
-      - C:\Users\tsrin\OutputResult:/output  
+      - C:/Users/tsrin/OutputResult:/output  
