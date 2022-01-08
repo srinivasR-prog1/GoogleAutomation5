@@ -9,6 +9,5 @@ COPY pom.xml pom.xml
 #ENTRYPOINT java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* -Dbrowser=$browser  -DBUS_HOST=$BUS_HOST  org.testng.TestNG $MODULE
 #Add healthcheck.sh healthcheck.sh
 RUN wget https://s3.amazonaws.com/selenium-docker/healthcheck/healthcheck.sh
-#ENTRYPOINT sh healthcheck.sh
 #ENTRYPOINT ["/bin/sh", "-c", "sh healthcheck.sh"]
-ENTRYPOINT ["/bin/bash", "/healthcheck.sh"]
+ENTRYPOINT sh healthcheck.sh
