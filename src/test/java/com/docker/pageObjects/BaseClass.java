@@ -31,7 +31,7 @@ public class BaseClass {
 		 */
 		String host = "selenium-hub";
 		
-	//	String browserName=BROWSER;
+		String browserName=BROWSER;
 
 		/*
 		 * if(HUB_HOST != null) { host=HUB_HOST;
