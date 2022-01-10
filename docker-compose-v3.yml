@@ -24,6 +24,6 @@ services:
     environment:
       - HUB_HOST=selenium-hub
       - BROWSER=chrome       
-      - MODULE=pom.xml
+      - MODULE=testng.xml
     volumes:
       - ./output/book-result:/Users/tsrin/workspace/GoogleAutomation5/test-output  
