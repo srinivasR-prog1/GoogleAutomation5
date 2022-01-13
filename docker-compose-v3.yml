@@ -12,7 +12,7 @@ services:
     depends_on:
       - selenium-hub
     environment:
-      - SE_EVENT_BUS_HOST=selenium-hub 
+      - HUB_HOST=selenium-hub 
              
   firefox:
     image: selenium/node-firefox:latest
@@ -20,7 +20,7 @@ services:
     depends_on:
       - selenium-hub
     environment:
-      - SE_EVENT_BUS_HOST=selenium-hub  
+      - HUB_HOST=selenium-hub  
 
   search-module:
     image: srinivas111/selenium-docker    
